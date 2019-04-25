@@ -43,7 +43,7 @@ class ApplicationController < Sinatra::Base
   if !params[:username].empty? && !params[:password].empty?
    # binding.pry
     u = User.find_by(:username => params[:username])
-    if u && u.authenticate(params[:password]) 
+    if u && u.authenticate(params[:password])
       binding.pry
       session[:user_id] = u.user_id 
       redirect '/account'
